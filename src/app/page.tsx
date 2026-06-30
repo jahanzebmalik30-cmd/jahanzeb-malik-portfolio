@@ -97,8 +97,8 @@ export default function Home() {
           <div className="glass overflow-hidden rounded-lg p-4">
             <div className="relative aspect-[4/5] overflow-hidden rounded-md bg-[var(--navy)]">
               <Image
-                src="/profile.svg"
-                alt="Professional portrait placeholder for Jahanzeb Malik"
+                src="/jahanzeb-malik-profile.png"
+                alt="Professional portrait of Jahanzeb Malik"
                 fill
                 priority
                 className="object-cover"
@@ -211,8 +211,13 @@ export default function Home() {
               <p className="text-sm font-bold gold-text">{item.tag}</p>
               <h3 className="mt-3 text-xl font-black">{item.title}</h3>
               <p className="mt-3 leading-7 text-[var(--muted)]">{item.text}</p>
-              <a href="#" className="focus-ring mt-5 inline-flex items-center gap-2 rounded-full font-bold gold-text">
-                Download research paper <FiDownload aria-hidden />
+              <a
+                href={item.href}
+                target={item.href.startsWith("http") ? "_blank" : undefined}
+                rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                className="focus-ring mt-5 inline-flex items-center gap-2 rounded-full font-bold gold-text"
+              >
+                View research article <FiDownload aria-hidden />
               </a>
             </motion.article>
           ))}
@@ -300,15 +305,28 @@ export default function Home() {
         <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <motion.div {...cardMotion} className="glass rounded-lg p-6">
             <div className="space-y-5">
-              <p className="flex items-center gap-3 text-[var(--muted)]">
+              <a
+                href={`mailto:${contact.email}`}
+                className="focus-ring flex items-center gap-3 rounded-lg text-[var(--muted)] hover:text-[var(--gold)]"
+              >
                 <FiMail className="gold-text" aria-hidden /> {contact.email}
-              </p>
-              <p className="flex items-center gap-3 text-[var(--muted)]">
+              </a>
+              <a
+                href={`https://wa.me/${contact.whatsapp.replace(/\D/g, "")}`}
+                target="_blank"
+                rel="noreferrer"
+                className="focus-ring flex items-center gap-3 rounded-lg text-[var(--muted)] hover:text-[var(--gold)]"
+              >
                 <FiPhone className="gold-text" aria-hidden /> {contact.whatsapp}
-              </p>
-              <p className="flex items-center gap-3 text-[var(--muted)]">
+              </a>
+              <a
+                href={contact.locationUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="focus-ring flex items-center gap-3 rounded-lg text-[var(--muted)] hover:text-[var(--gold)]"
+              >
                 <FiMapPin className="gold-text" aria-hidden /> {contact.location}
-              </p>
+              </a>
             </div>
             <div className="mt-8 flex gap-3">
               {socials.map((social) => {
@@ -317,6 +335,8 @@ export default function Home() {
                   <a
                     key={social.label}
                     href={social.href}
+                    target={social.href.startsWith("http") ? "_blank" : undefined}
+                    rel={social.href.startsWith("http") ? "noreferrer" : undefined}
                     aria-label={social.label}
                     title={social.label}
                     className="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-full border border-[var(--line)] text-[var(--foreground)] transition hover:border-[var(--gold)] hover:text-[var(--gold)]"
@@ -327,10 +347,19 @@ export default function Home() {
               })}
             </div>
             <div className="mt-8 flex min-h-64 items-center justify-center rounded-lg border border-[var(--line)] bg-[linear-gradient(135deg,rgba(11,23,54,0.08),rgba(200,155,60,0.18))] p-5 text-center">
-              <p className="max-w-sm font-semibold text-[var(--muted)]">
-                Location map placeholder. Embed a Google Maps iframe here when
-                the exact campus or office address is finalized.
-              </p>
+              <div>
+                <p className="mx-auto max-w-sm font-semibold text-[var(--muted)]">
+                  Open Jahanzeb Malik's location directly on Google Maps.
+                </p>
+                <a
+                  href={contact.locationUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="focus-ring mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-[var(--navy)] px-5 py-3 font-bold text-white transition hover:bg-[var(--gold)] hover:text-[#0b1736]"
+                >
+                  View Location <FiMapPin aria-hidden />
+                </a>
+              </div>
             </div>
           </motion.div>
 

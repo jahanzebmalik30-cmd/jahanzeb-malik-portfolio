@@ -7,6 +7,7 @@ import {
   FaChalkboardTeacher,
   FaFacebookF,
   FaGraduationCap,
+  FaInstagram,
   FaLinkedinIn,
   FaMosque,
   FaSchool,
@@ -24,11 +25,14 @@ import {
 } from "react-icons/fi";
 
 export const contact = {
-  email: "jahanzeb.malik@example.com",
-  whatsapp: "+92 300 0000000",
-  facebook: "https://facebook.com/",
-  linkedin: "https://linkedin.com/",
-  location: "Sindh, Pakistan",
+  email: "jahanzebmalik30@gmail.com",
+  whatsapp: "+923113281707",
+  facebook: "https://www.facebook.com/jhanzaib.malik.31",
+  linkedin:
+    "https://www.linkedin.com/in/muhammad-jahanzeb-97682a174?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+  instagram: "https://www.instagram.com/jahanzeb_malik87?igsh=azY5ZnU3dGpycm1r",
+  location: "Google Maps Location",
+  locationUrl: "https://maps.app.goo.gl/QismUGngUJhcJAcp9",
 };
 
 export const navItems = [
@@ -105,19 +109,22 @@ export const skills = [
 
 export const researchItems = [
   {
-    title: "M.Phil Thesis",
+    title: "Published Research Article",
     tag: "Islamic Studies",
-    text: "Research focused on classical Islamic scholarship, contemporary relevance and practical educational application.",
+    text: "Peer-reviewed research contribution published through Riphah International University journals.",
+    href: "https://journals.riphah.edu.pk/index.php/jitc/article/view/2485/1379",
   },
   {
-    title: "Published Articles",
+    title: "Sareer-a-Khama Article",
     tag: "Education & Faith",
-    text: "Articles exploring Islamic ethics, Seerah-based character formation and school improvement strategies.",
+    text: "Published scholarly article exploring Islamic thought, education and contemporary academic discussion.",
+    href: "https://sareer-a-khama.com/index.php/sak/article/view/55",
   },
   {
     title: "Research Interests",
     tag: "Seerah Research",
     text: "Seerah pedagogy, Islamic educational philosophy, youth character building and modern learning technologies.",
+    href: "#contact",
   },
 ];
 
@@ -210,5 +217,6 @@ export const socials = [
   { label: "WhatsApp", href: `https://wa.me/${contact.whatsapp.replace(/\D/g, "")}`, icon: FaWhatsapp },
   { label: "Facebook", href: contact.facebook, icon: FaFacebookF },
   { label: "LinkedIn", href: contact.linkedin, icon: FaLinkedinIn },
-  { label: "Location", href: "#contact", icon: FiMapPin },
+  { label: "Instagram", href: contact.instagram, icon: FaInstagram },
+  { label: "Location", href: contact.locationUrl, icon: FiMapPin },
 ];
