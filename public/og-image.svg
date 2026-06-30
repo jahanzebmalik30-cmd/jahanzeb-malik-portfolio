@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0b1736"/>
+  <circle cx="1000" cy="120" r="220" fill="#c89b3c" opacity=".18"/>
+  <circle cx="150" cy="560" r="260" fill="#ffffff" opacity=".08"/>
+  <text x="80" y="230" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="800">Jahanzeb Malik</text>
+  <text x="84" y="310" fill="#e8bf62" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700">Principal &amp; Educationist</text>
+  <text x="84" y="370" fill="#dbe6f4" font-family="Arial, Helvetica, sans-serif" font-size="34">Islamic Studies Researcher</text>
+  <rect x="84" y="448" width="360" height="8" rx="4" fill="#c89b3c"/>
+</svg>
